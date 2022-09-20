@@ -314,7 +314,7 @@ fn encoding_size(x: u64) -> usize {
     table! {
         (0b00, 1, 6 , 63);
         (0b01, 2, 14, 16_383);
-        (0b10, 4, 30, 1_073_741_823);
+        (0b10, 3, 30, 1_073_741_823);
     }
 }
 
@@ -791,6 +791,7 @@ mod tests {
             }
         })
     }
+
 
     #[cfg_attr(not(kani), test)]
     #[cfg_attr(kani, kani::proof, kani::unwind(5))]
